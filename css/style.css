@@ -9,6 +9,35 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Reset margins for text elements */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+blockquote,
+button {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  border: none;
+  background: none;
+  outline: none;
+  text-align: inherit;
+  box-shadow: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 .headerSection {
   background: white;
   display: flex;
@@ -19,6 +48,12 @@ body {
   box-sizing: border-box;
   box-shadow: inset 0 -1px 0 0 #e1e2ea;
   background: white;
+
+  /* Stick the position */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* Ensures it stays above other content if needed */
 }
 
 .content {
@@ -28,6 +63,10 @@ body {
   align-items: center;
   flex: 1 0 0;
   box-sizing: border-box;
+}
+
+.logo {
+  cursor: pointer;
 }
 
 .nav {
@@ -48,7 +87,6 @@ body {
   font-style: normal;
   font-weight: 600;
   line-height: 24px; /* 150% */
-  text-decoration: none;
 }
 
 .navCTA {
@@ -120,8 +158,565 @@ body {
 
   .navCTA {
     padding: 6px 12px;
+    font-size: 14px;
+    line-height: 20px; /* 150% */
+  }
+}
 
-    /* body-16-semibold */
+.heroSection {
+  display: flex;
+  box-sizing: border-box;
+  padding: 120px 24px 80px 24px;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  align-self: stretch;
+
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55.5%, #fff 100%),
+    linear-gradient(0deg, #006fff 0%, #006fff 100%),
+    url(/images/heroSection/heroSectionBG.jpg) lightgray 50% / cover no-repeat;
+  background-blend-mode: normal, color, normal;
+}
+
+.heroContent {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  align-self: stretch;
+}
+
+.heroHeading {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 800px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+  margin: auto;
+}
+
+.heroTitle {
+  align-self: stretch;
+
+  /* Typography */
+  text-align: center;
+  font-family: Satoshi-Variable;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 72px; /* 120% */
+
+  /* Style */
+  background: linear-gradient(91deg, #006fff 0%, #14adff 45.5%, #50a5e2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroText {
+  align-self: stretch;
+  color: var(--Neutral-600, #585e7a);
+  text-align: center;
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px; /* 144.444% */
+}
+
+.heroCTA {
+  display: flex;
+  box-sizing: border-box;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.contactSales {
+  display: flex;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  justify-content: flex-end;
+  align-items: center;
+
+  border-radius: 12px;
+  background: var(--Primary-500, #006efd);
+
+  color: var(--Shade-White, #fff);
+
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px; /* 144.444% */
+
+  cursor: pointer;
+}
+
+.aboutGenAI {
+  display: flex;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  justify-content: flex-end;
+  align-items: center;
+
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px #e1e2ea; /* Simulates an inner border */
+
+  color: #006efd;
+
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px; /* 144.444% */
+
+  cursor: pointer;
+}
+
+.toolSection {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  align-self: stretch;
+  margin: auto;
+}
+
+.toolList {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 1024px;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  align-self: stretch;
+  flex-wrap: wrap;
+}
+
+.tool {
+  /* width: 112px; */
+  height: 24px;
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.toolText {
+  max-width: 1024px;
+  align-self: stretch;
+  color: var(--Neutral-600, #585e7a);
+  text-align: center;
+
+  /* body-18 */
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px; /* 144.444% */
+}
+
+@media (max-width: 1023px) {
+  .heroHeading {
+    max-width: 640px;
+  }
+
+  .heroTitle {
+    font-size: 48px;
+    line-height: 54px; /* 120% */
+  }
+
+  .heroText {
+    font-size: 16px;
+    line-height: 24px; /* 144.444% */
+  }
+
+  .toolText {
+    font-size: 16px;
+    line-height: 24px; /* 144.444% */
+  }
+}
+
+@media (max-width: 767px) {
+  .heroSection {
+    padding: 80px 16px 48px 16px;
+    gap: 48px;
+
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55.5%, #fff 100%),
+      linear-gradient(0deg, #006fff 0%, #006fff 100%),
+      url(/images/heroSection/heroSectionBGSmall.jpeg) lightgray 50% / cover
+        no-repeat;
+    background-blend-mode: normal, color, normal;
+  }
+
+  .heroContent {
+    gap: 32px;
+  }
+
+  .heroHeading {
+    max-width: 440px;
+    gap: 12px;
+  }
+
+  .heroTitle {
+    font-size: 34px;
+    line-height: 44px; /* 120% */
+  }
+
+  .heroText {
+    font-size: 16px;
+    line-height: 24px; /* 144.444% */
+  }
+
+  .contactSales {
+    padding: 10px 16px;
+    font-size: 16px;
+    line-height: 24px; /* 144.444% */
+  }
+
+  .aboutGenAI {
+    padding: 10px 16px;
+    font-size: 16px;
+    line-height: 24px; /* 144.444% */
+  }
+
+  .toolSection {
+    gap: 16px;
+  }
+
+  .tool {
+    height: 20px;
+    padding: 12px;
+  }
+
+  .toolText {
+    font-size: 16px;
+    line-height: 24px; /* 144.444% */
+  }
+}
+
+@media (max-width: 479px) {
+  .heroSection {
+    padding: 60px 12px 36px 12px;
+    gap: 36px;
+  }
+
+  .heroContent {
+    gap: 24px;
+  }
+
+  .heroHeading {
+    max-width: 440px;
+    gap: 12px;
+  }
+
+  .heroTitle {
+    font-size: 32px;
+    line-height: 42px; /* 120% */
+  }
+
+  .heroText {
+    font-size: 14px;
+    line-height: 22px; /* 144.444% */
+  }
+
+  .heroCTA {
+    gap: 12px;
+  }
+
+  .contactSales {
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 20px; /* 144.444% */
+  }
+
+  .aboutGenAI {
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 20px; /* 144.444% */
+  }
+
+  .toolSection {
+    gap: 16px;
+  }
+
+  .tool {
+    height: 16px;
+    padding: 8px;
+  }
+
+  .toolText {
+    font-size: 14px;
+    line-height: 22px; /* 144.444% */
+  }
+}
+
+.genaiSection {
+  display: flex;
+  box-sizing: border-box;
+  padding: 80px 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  align-self: stretch;
+}
+
+.genaiHeading {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 1200px;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+  margin: auto;
+}
+
+.genaiTitle {
+  align-self: stretch;
+
+  color: #2b2e3d;
+  text-align: center;
+
+  font-family: Satoshi-Variable;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 54px; /* 135% */
+}
+
+.genaiText {
+  align-self: stretch;
+
+  color: var(--Neutral-600, #585e7a);
+  text-align: center;
+
+  /* body-18 */
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px; /* 144.444% */
+}
+
+.genaiArticle {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 24px;
+  align-self: stretch;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.article {
+  display: flex;
+  box-sizing: border-box;
+  min-width: 380px;
+  max-width: 400px;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 0 0;
+
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px #e1e2ea; /* Simulates an inner border */
+  overflow: hidden;
+}
+
+.articleBanner {
+  box-sizing: border-box;
+  padding: 1px 1px 0px 1px;
+  border-radius: 12px 12px 0 0;
+  height: 200px;
+  align-self: stretch;
+  object-fit: cover;
+
+  background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+}
+
+.articleContent {
+  display: flex;
+  box-sizing: border-box;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+}
+
+.articleHeading {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+}
+
+.articleTag {
+  align-self: stretch;
+
+  color: #6b7394;
+
+  /* body-14 */
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px; /* 157.143% */
+}
+
+.articleTitle {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  align-self: stretch;
+
+  overflow: hidden;
+  color: #2b2e3d;
+  text-overflow: ellipsis;
+
+  /* h-20-bold */
+  font-family: Satoshi-Variable;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px; /* 140% */
+}
+
+.articleLink {
+  align-self: stretch;
+
+  color: #006efd;
+
+  /* body-16-semibold */
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+}
+
+@media (max-width: 1023px) {
+  .genaiTitle {
+    font-size: 34px;
+    line-height: 44px; /* 135% */
+  }
+
+  .genaiText {
+    font-size: 16px;
+    line-height: 24px; /* 144.444% */
+  }
+
+  .article {
+    min-width: 348px;
+  }
+}
+
+@media (max-width: 767px) {
+  .genaiSection {
+    padding: 48px 16px;
+    gap: 32px;
+  }
+
+  .genaiHeading {
+    gap: 12px;
+  }
+
+  .genaiTitle {
+    font-size: 32px;
+    line-height: 42px; /* 135% */
+  }
+
+  .genaiText {
+    font-size: 16px;
+    line-height: 24px; /* 144.444% */
+  }
+
+  .genaiArticle {
+    gap: 16px;
+  }
+
+  .article {
+    min-width: 348px;
+  }
+
+  .articleContent {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .articleTitle {
+    font-size: 18px;
+    line-height: 26px; /* 140% */
+  }
+
+  .articleLink {
+    font-size: 14px;
+    line-height: 20x; /* 150% */
+  }
+}
+
+@media (max-width: 479px) {
+  .genaiSection {
+    padding: 36px 12px;
+    gap: 24px;
+  }
+
+  .genaiHeading {
+    gap: 12px;
+  }
+
+  .genaiTitle {
+    font-size: 30px;
+    line-height: 38px; /* 135% */
+  }
+
+  .genaiText {
+    font-size: 14px;
+    line-height: 22px; /* 144.444% */
+  }
+
+  .genaiArticle {
+    gap: 16px;
+    margin: unset;
+  }
+
+  .article {
+    min-width: 280px;
+    max-width: 400px;
+  }
+
+  .articleContent {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .articleHeading {
+    gap: 4px;
+  }
+
+  .articleTag {
+    font-size: 12px;
+    line-height: 20px; /* 157.143% */
+  }
+
+  .articleTitle {
+    font-size: 18px;
+    line-height: 26px; /* 140% */
+  }
+
+  .articleLink {
     font-size: 14px;
     line-height: 20px; /* 150% */
   }
