@@ -39,6 +39,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 .headerSection {
   background: white;
   display: flex;
@@ -1148,5 +1152,175 @@ a {
   .ourexpertItemLink {
     font-size: 14px;
     line-height: 20px; /* 142.857% */
+  }
+}
+
+.pocSection {
+  display: flex;
+  box-sizing: border-box;
+  padding: 80px 24px;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  align-self: stretch;
+
+  background: url(/images/pocSection/pocSectionBG.jpeg) lightgray 50% / cover
+    no-repeat;
+}
+
+.pocContent {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 1200px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+  align-self: center;
+  width: 100%;
+}
+
+.pocHeading {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 1200px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.pocTitle {
+  align-self: stretch;
+
+  color: #fff;
+
+  /* h-48 */
+  font-family: Satoshi-Variable;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 54px; /* 112.5% */
+}
+
+.pocText {
+  align-self: stretch;
+
+  color: #e5f0ff;
+
+  /* body-18 */
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px; /* 144.444% */
+}
+
+.pocCTA {
+  display: flex;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  justify-content: flex-end;
+  align-items: center;
+
+  border-radius: 12px;
+  background: #fff;
+}
+
+.ctaText {
+  color: #006efd;
+
+  /* body-18-semibold */
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px; /* 144.444% */
+}
+
+@media (max-width: 1023px) {
+  .pocTitle {
+    font-size: 40px;
+    line-height: 54px; /* 112.5% */
+  }
+
+  .pocText {
+    font-size: 16px;
+    line-height: 24px; /* 144.444% */
+  }
+}
+
+@media (max-width: 767px) {
+  .pocSection {
+    padding: 48px 16px;
+  }
+
+  .pocContent {
+    align-items: center;
+    gap: 32px;
+    align-self: center;
+    width: 100%;
+  }
+
+  .pocHeading {
+    align-items: center;
+    gap: 12px;
+  }
+
+  .pocTitle {
+    text-align: center;
+    font-size: 34px;
+    line-height: 44px; /* 112.5% */
+  }
+
+  .pocText {
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px; /* 144.444% */
+  }
+
+  .pocCTA {
+    padding: 10px 16px;
+  }
+
+  .ctaText {
+    font-size: 16px;
+    line-height: 24px; /* 144.444% */
+  }
+}
+
+@media (max-width: 479px) {
+  .pocSection {
+    padding: 36px 12px;
+    gap: 24px;
+  }
+
+  .pocContent {
+    gap: 24px;
+  }
+
+  .pocHeading {
+    align-items: center;
+    gap: 12px;
+  }
+
+  .pocTitle {
+    text-align: center;
+    font-size: 32px;
+    line-height: 42px; /* 112.5% */
+  }
+
+  .pocText {
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px; /* 112.5% */
+  }
+
+  .pocCTA {
+    padding: 8px 12px;
+  }
+
+  .ctaText {
+    font-size: 14px;
+    line-height: 20px; /* 144.444% */
   }
 }
