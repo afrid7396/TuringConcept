@@ -43,6 +43,24 @@ button {
   cursor: pointer;
 }
 
+input {
+  border: none; /* Removes the border */
+  outline: none; /* Removes the outline when the input is focused */
+  background: none; /* Removes any default background color */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+  box-shadow: none; /* Removes any default box shadow */
+}
+
+textarea {
+  all: unset; /* Resets all inherited and default properties */
+  display: block; /* Makes it behave like a block element */
+  width: 100%; /* Set width as needed */
+  height: auto; /* Set height as needed */
+  box-sizing: border-box; /* Include padding and border in width and height */
+  resize: none; /* Prevent resizing if desired */
+}
+
 .headerSection {
   background: white;
   display: flex;
@@ -1723,5 +1741,214 @@ button {
   .futureItemText {
     font-size: 14px;
     line-height: 22px; /* 144.444% */
+  }
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.letstalkSection {
+  display: flex;
+  box-sizing: border-box;
+  padding: 80px 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  align-self: stretch;
+}
+
+.letstalkHeading {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 800px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: center;
+}
+
+.letstalkTitle {
+  align-self: stretch;
+
+  color: #2b2e3d;
+  text-align: center;
+
+  /* h-40 */
+  font-family: Satoshi-Variable;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 54px; /* 135% */
+}
+
+.letstalkText {
+  align-self: stretch;
+
+  color: var(--Neutral-600, #585e7a);
+  text-align: center;
+
+  /* body-18 */
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px; /* 144.444% */
+}
+
+.letstalkForm {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 800px;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 24px;
+  align-self: center;
+  flex-wrap: wrap;
+}
+
+.letstalkInput {
+  display: block; /* Use block to make inputs take the full width */
+  box-sizing: border-box;
+  min-width: 348px;
+  padding: 12px 12px; /* Adjust the top padding to move the placeholder text up */
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1 0 0;
+
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px #e1e2ea; /* Simulates an inner border */
+
+  color: #585e7a;
+
+  /* body-18 */
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px; /* 144.444% */
+}
+
+.letstalkInput::placeholder {
+  color: #a4a8b8;
+}
+
+.letstalkInput:focus {
+  box-shadow: inset 0 0 0 2px #006efd;
+}
+
+.letstalkInputmsg {
+  min-height: 200px;
+}
+
+.sendCTA {
+  display: flex;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  justify-content: flex-end;
+  align-items: center;
+
+  border-radius: 12px;
+  background: #006efd;
+
+  color: #fff;
+
+  /* body-18-semibold */
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px; /* 144.444% */
+
+  cursor: pointer;
+}
+
+@media (max-width: 1023px) {
+  .letstalkTitle {
+    font-size: 34px;
+    line-height: 44px; /* 135% */
+  }
+
+  .letstalkText {
+    font-size: 16px;
+    line-height: 24px; /* 144.444% */
+  }
+
+  .letstalkInput {
+    font-size: 16px;
+    line-height: 24px; /* 144.444% */
+  }
+}
+
+@media (max-width: 767px) {
+  .letstalkSection {
+    padding: 48px 16px;
+    gap: 32px;
+  }
+
+  .letstalkHeading {
+    gap: 12px;
+  }
+
+  .letstalkTitle {
+    font-size: 34px;
+    line-height: 44px; /* 135% */
+  }
+
+  .letstalkText {
+    font-size: 16px;
+    line-height: 24px; /* 144.444% */
+  }
+
+  .letstalkForm {
+    gap: 16px;
+  }
+
+  .letstalkInput {
+    font-size: 16px;
+    line-height: 24px; /* 144.444% */
+  }
+
+  .sendCTA {
+    font-size: 16px;
+    line-height: 24px; /* 144.444% */
+  }
+}
+
+@media (max-width: 479px) {
+  .letstalkSection {
+    padding: 36px 12px;
+    gap: 24px;
+  }
+
+  .letstalkHeading {
+    gap: 12px;
+  }
+
+  .letstalkTitle {
+    font-size: 30px;
+    line-height: 38px; /* 135% */
+  }
+
+  .letstalkText {
+    font-size: 14px;
+    line-height: 22px; /* 144.444% */
+  }
+
+  .letstalkForm {
+    gap: 12px;
+  }
+
+  .letstalkInput {
+    min-width: 280px;
+    padding: 12px 12px; /* Adjust the top padding to move the placeholder text up */
+    gap: 12px;
+    font-size: 14px;
+    line-height: 22px; /* 144.444% */
+  }
+
+  .sendCTA {
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 20px; /* 144.444% */
   }
 }
